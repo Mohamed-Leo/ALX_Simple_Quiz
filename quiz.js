@@ -4,15 +4,16 @@ submitBtn = document.getElementById("submit-answer"),
 feedback = document.getElementById('feedback');
 
 submitBtn.addEventListener("click" , _ => {
-    let userAnswer;
+    // get the checked input----
+    let userAnswer = parseFloat(document.querySelector("input[name='quiz']:checked").value);
 
-    // loop on radioInputs to get the checked value-----
-    radioInputs.forEach(input => {
-        // check on inputs and assign the value----
-        if(input.checked) userAnswer = input.value;
-    })
+    // // loop on radioInputs to get the checked value-----
+    // radioInputs.forEach(input => {
+    //     // check on inputs and assign the value----
+    //     if(input.checked) userAnswer = input.value;
+    // })
     checkAnswer(userAnswer);
-})
+});
 
 
 function checkAnswer (userAnswer) {
